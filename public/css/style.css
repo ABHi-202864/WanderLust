@@ -1,7 +1,3 @@
-/* body {
-    background-color: palevioletred;
-} */
-
 /* navbar */
 .navbar {
     height: 5rem;
@@ -16,4 +12,36 @@
 
 .nav-link {
     color: #222 !important;
+}
+
+/* footer */
+.f-info {
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-info-socials,
+.f-info-links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-info-socials i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color: #222;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
 }
