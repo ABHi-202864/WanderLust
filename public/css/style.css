@@ -2,7 +2,7 @@ body {
     font-family: "Plus Jakarta Sans", sans-serif;
     display: flex;
     flex-direction: column;
-    min-width: 100vh;
+    min-height: 100vh;
 }
 
 .container {
@@ -56,6 +56,8 @@ body {
 .f-info-links a:hover {
     text-decoration: underline;
 }
+
+
 
 /* cards */
 .card {
