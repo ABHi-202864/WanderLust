@@ -5,15 +5,16 @@
 
             <h3 class="mt-4 mb-4">Create a New listing</h3>
 
-            <form action="/listings" method="POST">
+            <form action="/listings" method="POST" novalidate class="needs-validation">
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
-                    <input type="text" name="listing[title]" placeholder="Add a catchy title" class="form-control">
+                    <input type="text" name="listing[title]" placeholder="Add a catchy title" class="form-control"
+                        required>
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
                     <textarea rows="5" cols="8" name="listing[description]" placeholder="Typing here..."
-                        class="form-control"></textarea>
+                        class="form-control" required></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="image" class="form-label">Image Link</label>
@@ -22,13 +23,13 @@
                 <div class="row">
                     <div class="mb-3 col-md-4">
                         <label for="price" class="form-label">Price</label>
-                        <input type="number" name="listing[price]" placeholder="1200" class="form-control">
+                        <input type="number" name="listing[price]" placeholder="1200" class="form-control" required>
                     </div>
                     <div class="mb-3 col-md-8">
                         <label for="country" class="form-label">Country</label><span
                             style="color: red !important; display: inline; float: none;">*</span>
                         <!-- <input type="text" name="listing[country]" class="form-control"> -->
-                        <select type="text" name="listing[country]" class="form-control">
+                        <select type="text" name="listing[country]" class="form-control" required>
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Åland Islands</option>
                             <option value="Albania">Albania</option>
@@ -283,7 +284,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="location" class="form-label">Location</label>
-                    <input type="text" name="listing[location]" placeholder="West Bengal, Kolkata" class="form-control">
+                    <input type="text" name="listing[location]" placeholder="West Bengal, Kolkata" class="form-control"
+                        required>
                 </div>
                 <button class="btn btn-dark add-btn mt-3 mb-3">Add</button>
             </form>
