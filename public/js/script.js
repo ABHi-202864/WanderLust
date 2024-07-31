@@ -1,4 +1,4 @@
-// This function for -- client side Validation.  
+// This function for -- client side Form Validation.  
 function forFormValidation() {
     (function () {
         'use strict'
