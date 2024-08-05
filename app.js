@@ -8,7 +8,7 @@ const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
 const { listingSchema, reviewSchema } = require("./schema.js");
-const Reviews = require("./models/review.js");
+const Review = require("./models/review.js");
 
 
 
@@ -104,7 +104,7 @@ app.delete("/listings/:id", wrapAsync(async (req, res) => {
 // review -- add review for particuler item route
 app.post("/listings/:id/reviews", validateReview, wrapAsync(async (req, res) => {
     let listing = await Listing.findById(req.params.id);
-    let newReview = new Reviews(req.body.review);
+    let newReview = new Review(req.body.review);
 
     listing.reviews.push(newReview);
 
@@ -112,6 +112,15 @@ app.post("/listings/:id/reviews", validateReview, wrapAsync(async (req, res) => 
     await listing.save();
 
     res.redirect(`/listings/${listing._id}`);
+}));
+
+// delete review route-- delete route for individule reviews
+app.delete("/listings/:id/reviews/:reviewId", wrapAsync(async (req, res) => {
+    let { id, reviewId } = req.params;
+    await Listing.findByIdAndUpdate(id, { $pull: { reviews: reviewId } });
+    await Review.findByIdAndDelete(reviewId);
+
+    res.redirect(`/listings/${id}`);
 }));
 
 // app.get("/testListing", async (req, res) => {
