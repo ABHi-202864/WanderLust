@@ -84,7 +84,7 @@ app.use((req, res, next) => {
 // });
 
 
-// Express Router
+// Express Router 
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
