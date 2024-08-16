@@ -21,7 +21,7 @@ router.route("/:id")
     // show -- individul list route
     .get(wrapAsync(listingController.showListing))
     // update -- that edit list route
-    .put(isLoggedIn, isOwner, validateListing, wrapAsync(listingController.updateListing))
+    .put(isLoggedIn, isOwner, upload.single("listing[image]"), validateListing, wrapAsync(listingController.updateListing))
     // delete -- listing route
     .delete(isLoggedIn, isOwner, wrapAsync(listingController.destroyListing));
 
