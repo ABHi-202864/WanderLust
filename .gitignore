@@ -1,0 +1,7 @@
+# SECRET
+.env
+
+
+
+# Dependency directories
+node_modules/
