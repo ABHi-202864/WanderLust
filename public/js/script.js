@@ -19,3 +19,20 @@ function forFormValidation() {
     })();
 }
 forFormValidation();
+
+
+// index.ejs tax code
+function taxCode() {
+    let taxSwitch = document.querySelector("#flexSwitchCheckDefault");
+    taxSwitch.addEventListener("click", () => {
+        let taxInfo = document.getElementsByClassName("tax-info");
+        for (info of taxInfo) {
+            if (info.style.display != "inline") {
+                info.style.display = "inline";
+            } else {
+                info.style.display = "none";
+            }
+        }
+    });
+}
+taxCode();
